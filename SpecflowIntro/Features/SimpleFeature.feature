@@ -18,6 +18,8 @@ Scenario: Create a new employee with mandatary details
 	When I fill all the mandatory details in form
 	| Name    | Age | Phone     | Email        |
 	| karthik | 28  | 112548523 | ka@gmail.com |
+	| huamin | 28  | 112556568523 | aa@gmail.com |
+	| zhang | 28  | 112548234234523 |huahuaa@gmail.com |
 	#And I click the save button
 	#Then I should see all the details saved in my appliation and DB
 

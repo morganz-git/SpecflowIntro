@@ -103,6 +103,16 @@ this.ScenarioSetup(scenarioInfo);
                         "28",
                         "112548523",
                         "ka@gmail.com"});
+            table1.AddRow(new string[] {
+                        "huamin",
+                        "28",
+                        "112556568523",
+                        "aa@gmail.com"});
+            table1.AddRow(new string[] {
+                        "zhang",
+                        "28",
+                        "112548234234523",
+                        "huahuaa@gmail.com"});
 #line 18
  testRunner.When("I fill all the mandatory details in form", ((string)(null)), table1, "When ");
 #line hidden

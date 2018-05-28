@@ -39,6 +39,7 @@ namespace SpecflowIntro.StepDefination
         [When(@"I fill all the mandatory details in form")]
         public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
         {
+            //the follow used to read record from table with single record
             EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
             Console.WriteLine(details.Name);
         }
