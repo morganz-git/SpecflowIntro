@@ -40,8 +40,21 @@ namespace SpecflowIntro.StepDefination
         public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
         {
             //the follow used to read record from table with single record
-            EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
-            Console.WriteLine(details.Name);
+           // EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
+           // Console.WriteLine(details.Name);
+
+
+            //*******************important
+            var details = table.CreateSet<EmployeeDetails>();
+            foreach (var VARIABLE in details)
+            {
+                Console.WriteLine("*********************");
+                Console.WriteLine(VARIABLE.Name);
+                Console.WriteLine(VARIABLE.Age);
+                Console.WriteLine(VARIABLE.Phone);
+                Console.WriteLine(VARIABLE.Email);
+            }
+
         }
 
 
