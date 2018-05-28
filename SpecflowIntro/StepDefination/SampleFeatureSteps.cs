@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace SpecflowIntro.StepDefination
 {
-    [Binding]
+   [Binding]
     class SampleFeatureSteps
     {
         [Given(@"I have entered (.*) into the calculator")]
@@ -19,13 +20,13 @@ namespace SpecflowIntro.StepDefination
         [When(@"I press add")]
         public void WhenIPressAdd()
         {
-           Console.WriteLine("Press the add button!");
+            Console.WriteLine("Press the add button!");
         }
 
         [Then(@"the result should be (.*) on the screen")]
         public void ThenTheResultShouldBeOnTheScreen(int result)
         {
-            if (result==120)
+            if (result == 120)
             {
                 Console.WriteLine("Pass!");
             }
@@ -35,6 +36,14 @@ namespace SpecflowIntro.StepDefination
                 throw new Exception("Fail");
             }
         }
+        [When(@"I fill all the mandatory details in form")]
+        public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
+        {
+            EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
+            Console.WriteLine(details.Name);
+        }
+
+
 
     }
 }
