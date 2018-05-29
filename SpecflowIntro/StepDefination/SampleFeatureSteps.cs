@@ -8,7 +8,7 @@ using TechTalk.SpecFlow.Assist;
 
 namespace SpecflowIntro.StepDefination
 {
-   [Binding]
+    [Binding]
     class SampleFeatureSteps
     {
         [Given(@"I have entered (.*) into the calculator")]
@@ -40,10 +40,8 @@ namespace SpecflowIntro.StepDefination
         public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
         {
             //the follow used to read record from table with single record
-           // EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
-           // Console.WriteLine(details.Name);
-
-
+            // EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
+            // Console.WriteLine(details.Name);
             //*******************important
             var details = table.CreateSet<EmployeeDetails>();
             foreach (var VARIABLE in details)
@@ -57,7 +55,14 @@ namespace SpecflowIntro.StepDefination
 
         }
 
+        [When(@"I fill all the mandatory details to form (.*),(.*) and (.*)")]
+        public void WhenIFillAllTheMandatoryDetailsToFormKarthikAnd(string name, int age, Int64 phone)
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Age: " + age);
+            Console.WriteLine("Phone: " + phone);
 
+        }
 
     }
 }

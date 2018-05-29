@@ -23,5 +23,18 @@ Scenario: Create a new employee with mandatary details
 	#And I click the save button
 	#Then I should see all the details saved in my appliation and DB
 
+	#use single scenaril to run mutipul datas,need to use Example
+Scenario Outline: Create a new employee with mandatary details for multiple datas on
+	#Given I have opened my application
+	#Then I should see employee details page
+	When I fill all the mandatory details to form <Name>,<Age> and <Phone>
+	#And I click the save button
+	#Then I should see all the details saved in my appliation and DB
+Examples: 
+	| Name    | Age | Phone           |
+	| karthik | 28  | 112548523       |
+	| huamin  | 28  | 112556568523    |
+	| zhang   | 28  | 112548234234523 |
+
 
 
