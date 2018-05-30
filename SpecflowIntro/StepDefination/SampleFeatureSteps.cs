@@ -62,6 +62,9 @@ namespace SpecflowIntro.StepDefination
             Console.WriteLine("Age: " + age);
             Console.WriteLine("Phone: " + phone);
 
+            ScenarioContext.Current["information"] = "step passed!";
+            Console.WriteLine(ScenarioContext.Current["information"]);
+
         }
 
     }
