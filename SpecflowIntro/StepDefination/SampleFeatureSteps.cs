@@ -65,6 +65,45 @@ namespace SpecflowIntro.StepDefination
             ScenarioContext.Current["information"] = "step passed!";
             Console.WriteLine(ScenarioContext.Current["information"]);
 
+            List<EmployeeDetails> employee = new List<EmployeeDetails>()
+        {
+            new EmployeeDetails()
+            {
+                Name = "morgan1",
+                Age = 23,
+                Email = "huahua@huahua",
+                Phone = 221
+                },
+            new EmployeeDetails()
+            {
+                Name = "morgan2",
+                Age = 23,
+                Email = "huahua@huahua",
+                Phone = 221
+            },
+            new EmployeeDetails()
+            {
+                Name = "morgan3",
+                Age = 23,
+                Email = "huahua@huahua",
+                Phone = 221
+            },
+
+        };
+            //save the value into scenario context
+            ScenarioContext.Current.Add("key", employee);
+
+            //get the value form scenario context
+           var listEmp= ScenarioContext.Current.Get<List<EmployeeDetails>>("key");
+            foreach (var emp in listEmp)
+            {
+                Console.WriteLine(emp.Name);
+                Console.WriteLine(emp.Age);
+                Console.WriteLine(emp.Email);
+                Console.WriteLine(emp.Phone);
+            }
+
+
         }
 
     }
