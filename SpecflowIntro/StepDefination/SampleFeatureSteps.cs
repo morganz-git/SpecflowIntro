@@ -43,14 +43,17 @@ namespace SpecflowIntro.StepDefination
             // EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
             // Console.WriteLine(details.Name);
             //*******************important
-            var details = table.CreateSet<EmployeeDetails>();
-            foreach (var VARIABLE in details)
+//            var details = table.CreateSet<EmployeeDetails>();
+
+            //so is you use assist dynamic,you no need to create employee class 
+            var details = table.CreateDynamicSet();
+            foreach (var variable in details)
             {
                 Console.WriteLine("*********************");
-                Console.WriteLine(VARIABLE.Name);
-                Console.WriteLine(VARIABLE.Age);
-                Console.WriteLine(VARIABLE.Phone);
-                Console.WriteLine(VARIABLE.Email);
+                Console.WriteLine(variable.Name);
+                Console.WriteLine(variable.Age);
+                Console.WriteLine(variable.Phone);
+                Console.WriteLine(variable.Email);
             }
 
         }
