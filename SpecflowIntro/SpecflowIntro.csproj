@@ -70,8 +70,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer_Login.cs" />
     <Compile Include="EmployeeDetails.cs" />
     <Compile Include="ExtendedSteps.cs" />
+    <Compile Include="Features\Cunstomer_Login.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cunstomer_Login.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\User_Login.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User_Login.feature</DependentUpon>
+    </Compile>
     <Compile Include="TestFixture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,9 +92,18 @@
       <DependentUpon>SimpleFeature.feature</DependentUpon>
     </Compile>
     <Compile Include="StepDefination\SampleFeatureSteps.cs" />
+    <Compile Include="User_Login.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Features\Cunstomer_Login.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Cunstomer_Login.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\User_Login.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>User_Login.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="Features\SimpleFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
