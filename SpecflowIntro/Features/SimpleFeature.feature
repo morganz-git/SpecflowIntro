@@ -37,4 +37,10 @@ Examples:
 	| zhang   | 28  | 112548234234523 |
 
 
+	Scenario: check if i could get the details entred via Table from extended stps
+	When I fill all the mandatory details in form
+	| Name   | Age | Phone  | Email     |
+	| huamin | 44  | 998899 | huh@hh.hh |
+	Then I should the the same value from Extended steps
+
 

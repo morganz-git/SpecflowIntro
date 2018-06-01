@@ -11,6 +11,13 @@ namespace SpecflowIntro.StepDefination
     [Binding]
     class SampleFeatureSteps
     {
+        public EmployeeDetails employeeDetails { get; set; }
+
+        public SampleFeatureSteps(EmployeeDetails employee)
+        {
+            this.employeeDetails = employee;
+        }
+
         [Given(@"I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredIntoTheCalculator(int number)
         {
@@ -36,9 +43,19 @@ namespace SpecflowIntro.StepDefination
                 throw new Exception("Fail");
             }
         }
+
         [When(@"I fill all the mandatory details in form")]
         public void WhenIFillAllTheMandatoryDetailsInForm(Table table)
         {
+            var data = table.CreateDynamicSet();
+            //用 item 里面的数据对employeeDetails进行填充；后续在ExtendedSteps中进行提取；
+            foreach (var item in data)
+            {
+                employeeDetails.Name = item.Name;
+                employeeDetails.Age = item.Age;
+                employeeDetails.Phone = item.Phone;
+                employeeDetails.Email = item.Email;
+            }
             //the follow used to read record from table with single record
             // EmployeeDetails details = table.CreateInstance<EmployeeDetails>();
             // Console.WriteLine(details.Name);
@@ -46,7 +63,7 @@ namespace SpecflowIntro.StepDefination
 //            var details = table.CreateSet<EmployeeDetails>();
 
             //so is you use assist dynamic,you no need to create employee class 
-            var details = table.CreateDynamicSet();
+            /*var details = table.CreateDynamicSet();
             foreach (var variable in details)
             {
                 Console.WriteLine("*********************");
@@ -54,8 +71,7 @@ namespace SpecflowIntro.StepDefination
                 Console.WriteLine(variable.Age);
                 Console.WriteLine(variable.Phone);
                 Console.WriteLine(variable.Email);
-            }
-
+            }*/
         }
 
         [When(@"I fill all the mandatory details to form (.*),(.*) and (.*)")]
@@ -69,35 +85,34 @@ namespace SpecflowIntro.StepDefination
             Console.WriteLine(ScenarioContext.Current["information"]);
 
             List<EmployeeDetails> employee = new List<EmployeeDetails>()
-        {
-            new EmployeeDetails()
             {
-                Name = "morgan1",
-                Age = 23,
-                Email = "huahua@huahua",
-                Phone = 221
+                new EmployeeDetails()
+                {
+                    Name = "morgan1",
+                    Age = 23,
+                    Email = "huahua@huahua",
+                    Phone = 221
                 },
-            new EmployeeDetails()
-            {
-                Name = "morgan2",
-                Age = 23,
-                Email = "huahua@huahua",
-                Phone = 221
-            },
-            new EmployeeDetails()
-            {
-                Name = "morgan3",
-                Age = 23,
-                Email = "huahua@huahua",
-                Phone = 221
-            },
-
-        };
+                new EmployeeDetails()
+                {
+                    Name = "morgan2",
+                    Age = 23,
+                    Email = "huahua@huahua",
+                    Phone = 221
+                },
+                new EmployeeDetails()
+                {
+                    Name = "morgan3",
+                    Age = 23,
+                    Email = "huahua@huahua",
+                    Phone = 221
+                },
+            };
             //save the value into scenario context
             ScenarioContext.Current.Add("key", employee);
 
             //get the value form scenario context
-           var listEmp= ScenarioContext.Current.Get<List<EmployeeDetails>>("key");
+            var listEmp = ScenarioContext.Current.Get<List<EmployeeDetails>>("key");
             foreach (var emp in listEmp)
             {
                 Console.WriteLine(emp.Name);
@@ -105,9 +120,6 @@ namespace SpecflowIntro.StepDefination
                 Console.WriteLine(emp.Email);
                 Console.WriteLine(emp.Phone);
             }
-
-
         }
-
     }
 }

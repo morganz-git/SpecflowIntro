@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpecflowIntro
 {
-    class EmployeeDetails
+    public class EmployeeDetails
     {
         public string Name { get; set; }
         public Int64 Phone { get; set; }
