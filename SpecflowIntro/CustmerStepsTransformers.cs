@@ -10,7 +10,7 @@ namespace SpecflowIntro
     [Binding]
     class CustmerStepsTransformers
     {
-        //(\d+)用来匹配数字, here is pretty much important thing 
+        //(\d+)用来匹配多个数字, here is pretty much important thing 
         [StepArgumentTransformation(@"(\d+) days from current time")]
         public DateTime DayAdderTranformer(int days )
         {
