@@ -5,4 +5,4 @@ simple feature to demostrate user login feature
 Scenario: Login for user portal
 	Given I have open the application
 	And I login to application
-	Then I see user portal
+	Then I see user portal, the date is 5 days from current time

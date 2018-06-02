@@ -77,7 +77,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.And("I login to application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
- testRunner.Then("I see user portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I see user portal, the date is 5 days from current time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

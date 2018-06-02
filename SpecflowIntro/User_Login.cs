@@ -24,10 +24,14 @@ namespace SpecflowIntro
             Console.WriteLine("given user");
         }
 
-        [Then(@"I see user portal")]
-        public void ThenISeeUserPortal()
+        //modify the (.*) to (.* days from current time)
+        //(.* days from current time)->匹配到CustmerStepsTransformers 中的   [StepArgumentTransformation(@"(\d+) days from current time")]
+        [Then(@"I see user portal, the date is (.* days from current time)")]
+        public void ThenISeeUserPortalTheDateIsDaysFromCurrentTime(DateTime currendaDateTime)
         {
-            Console.WriteLine("login user");
+            Console.WriteLine("parameters transformers!");
+            Console.WriteLine(currendaDateTime);
         }
+
     }
 }

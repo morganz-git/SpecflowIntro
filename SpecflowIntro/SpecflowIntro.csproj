@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustmerStepsTransformers.cs" />
     <Compile Include="Customer_Login.cs" />
     <Compile Include="EmployeeDetails.cs" />
     <Compile Include="ExtendedSteps.cs" />
