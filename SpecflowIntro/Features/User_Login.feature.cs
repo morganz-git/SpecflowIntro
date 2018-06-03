@@ -79,6 +79,19 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Then("I see user portal, the date is 5 days from current time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Menu1",
+                        "Menu2",
+                        "Menu3",
+                        "Menu4"});
+            table1.AddRow(new string[] {
+                        "Login",
+                        "Setting",
+                        "Loginout",
+                        "Advanced"});
+#line 9
+ testRunner.And("I see the menus live", ((string)(null)), table1, "And ");
+#line hidden
             this.ScenarioCleanup();
         }
     }

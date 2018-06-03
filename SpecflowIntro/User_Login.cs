@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace SpecflowIntro
 {
@@ -33,5 +34,26 @@ namespace SpecflowIntro
             Console.WriteLine(currendaDateTime);
         }
 
+        [Then(@"I see the menus live")]
+        public void ThenISeeTheMenusLive(Table table)
+        {
+
+            /*
+             dynamic menus = table.CreateDynamicInstance();
+            string menu = menus.Menu1;
+            Console.WriteLine(menu);
+            */
+
+            //如果有多行数据
+
+            /*
+             * 这个方法也是可以的，直接用IEnumerable
+             * IEnumerable<dynamic> mEnumerable = table.CreateDynamicSet();
+             */
+            //这里将IEnumerable 转换为 list，在进行使用；
+            List<dynamic> menuList = table.CreateDynamicSet().ToList();
+            dynamic menu = menuList.First();
+            Console.WriteLine(menu.Menu2);
+        }
     }
 }
